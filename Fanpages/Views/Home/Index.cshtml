@@ -1,0 +1,189 @@
+﻿
+@section jsFooter{   
+    <script src="~/Content/js/Home/Index.js"></script>
+}
+@{ 
+    List<Fanpages.Models.Feeds> lstfeeds = (List<Fanpages.Models.Feeds>)ViewData["feeds"];
+    Fanpages.Areas.LoginPage.Models.Pagefb page = (Fanpages.Areas.LoginPage.Models.Pagefb)ViewData["page"];
+}
+<div class="row">
+    <div class="col-md-3">
+        <div class="portlet light portlet-fit full-height-content full-height-content-scrollable bordered">
+            <div class="portlet-title">
+                <div class="caption">
+                    <span class="caption-subject bold uppercase">Bài viết</span>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div class="full-height-content-body">
+                    <!-- BEGIN: Comments -->
+                    <div class="mt-comments">
+                        @foreach (Fanpages.Models.Feeds feed in lstfeeds)
+                        {
+                            <div class="mt-comment" data-id="@feed.id">
+                                <div class="mt-comment-img">
+                                    <img src="@page.image" />
+                                </div>
+                                <div class="mt-comment-body" >
+                                    <div class="mt-comment-info">
+                                        <span class="mt-comment-author">@page.pageName</span>
+                                        <span class="mt-comment-date">@feed.create_time</span>
+                                    </div>
+                                    <div class="mt-comment-text"> @feed.message </div>
+
+                                </div>
+                            </div>
+                        }
+                    </div>
+                    <!-- END: Comments -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="portlet light portlet-fit full-height-content full-height-content-scrollable bordered">
+            <div class="portlet-title">
+                <div class="caption">
+                    <span class="caption-subject bold uppercase">Bình luận</span>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div class="full-height-content-body">
+                    <div class="tab-content">
+                        <div class="tab-pane active">
+                            <!-- BEGIN: Comments -->
+                            <div class="mt-comments" id="comments">
+
+                            </div>
+                            <!-- END: Comments -->
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-sm-6">
+        <!-- BEGIN PORTLET-->
+        <div class="portlet light portlet-fit full-height-content full-height-content-scrollable bordered">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="icon-bubble font-hide hide"></i>
+                    <span class="caption-subject font-hide bold uppercase">Chats</span>
+                </div>
+                <div class="actions">
+                    <div class="portlet-input input-inline">
+                        <div class="input-icon right">
+                            <i class="icon-magnifier"></i>
+                            <input type="text" class="form-control input-circle" placeholder="search...">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="portlet-body" id="chats">
+                <div class="full-height-content-body">
+                    <div class="scroller" data-always-visible="1" data-rail-visible1="1">
+                        <ul class="chats">
+                            <li class="out">
+                                <img class="avatar" alt="" src="../assets/layouts/layout/img/avatar2.jpg" />
+                                <div class="message">
+                                    <span class="arrow"> </span>
+                                    <a href="javascript:;" class="name"> Lisa Wong </a>
+                                    <span class="datetime"> at 20:11 </span>
+                                    <span class="body"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </span>
+                                </div>
+                            </li>
+                            <li class="out">
+                                <img class="avatar" alt="" src="../assets/layouts/layout/img/avatar2.jpg" />
+                                <div class="message">
+                                    <span class="arrow"> </span>
+                                    <a href="javascript:;" class="name"> Lisa Wong </a>
+                                    <span class="datetime"> at 20:11 </span>
+                                    <span class="body"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </span>
+                                </div>
+                            </li>
+                            <li class="in">
+                                <img class="avatar" alt="" src="../assets/layouts/layout/img/avatar1.jpg" />
+                                <div class="message">
+                                    <span class="arrow"> </span>
+                                    <a href="javascript:;" class="name"> Bob Nilson </a>
+                                    <span class="datetime"> at 20:30 </span>
+                                    <span class="body"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </span>
+                                </div>
+                            </li>
+                            <li class="in">
+                                <img class="avatar" alt="" src="../assets/layouts/layout/img/avatar1.jpg" />
+                                <div class="message">
+                                    <span class="arrow"> </span>
+                                    <a href="javascript:;" class="name"> Bob Nilson </a>
+                                    <span class="datetime"> at 20:30 </span>
+                                    <span class="body"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </span>
+                                </div>
+                            </li>
+                            <li class="out">
+                                <img class="avatar" alt="" src="../assets/layouts/layout/img/avatar3.jpg" />
+                                <div class="message">
+                                    <span class="arrow"> </span>
+                                    <a href="javascript:;" class="name"> Richard Doe </a>
+                                    <span class="datetime"> at 20:33 </span>
+                                    <span class="body"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </span>
+                                </div>
+                            </li>
+                            <li class="in">
+                                <img class="avatar" alt="" src="../assets/layouts/layout/img/avatar3.jpg" />
+                                <div class="message">
+                                    <span class="arrow"> </span>
+                                    <a href="javascript:;" class="name"> Richard Doe </a>
+                                    <span class="datetime"> at 20:35 </span>
+                                    <span class="body"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </span>
+                                </div>
+                            </li>
+                            <li class="out">
+                                <img class="avatar" alt="" src="../assets/layouts/layout/img/avatar1.jpg" />
+                                <div class="message">
+                                    <span class="arrow"> </span>
+                                    <a href="javascript:;" class="name"> Bob Nilson </a>
+                                    <span class="datetime"> at 20:40 </span>
+                                    <span class="body"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </span>
+                                </div>
+                            </li>
+                            <li class="in">
+                                <img class="avatar" alt="" src="../assets/layouts/layout/img/avatar3.jpg" />
+                                <div class="message">
+                                    <span class="arrow"> </span>
+                                    <a href="javascript:;" class="name"> Richard Doe </a>
+                                    <span class="datetime"> at 20:40 </span>
+                                    <span class="body"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </span>
+                                </div>
+                            </li>
+                            <li class="out">
+                                <img class="avatar" alt="" src="../assets/layouts/layout/img/avatar1.jpg" />
+                                <div class="message">
+                                    <span class="arrow"> </span>
+                                    <a href="javascript:;" class="name"> Bob Nilson </a>
+                                    <span class="datetime"> at 20:54 </span>
+                                    <span class="body"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. sed diam nonummy nibh euismod tincidunt ut laoreet. </span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="chat-form">
+                        <div class="input-cont">
+                            <input class="form-control" type="text" placeholder="Type a message here..." />
+                        </div>
+                        <div class="btn-cont">
+                            <span class="arrow"> </span>
+                            <a href="" class="btn blue icn-only">
+                                <i class="fa fa-check icon-white"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+        <!-- END PORTLET-->
+    </div>
+</div>
